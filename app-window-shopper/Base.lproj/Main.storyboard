@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -27,34 +32,76 @@
                                     <constraint firstAttribute="width" constant="60" id="SaV-IT-lYs"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMF-ab-Skj" customClass="CurrencyTxtField" customModule="app_window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="63" y="144" width="249" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMF-ab-Skj" customClass="CurrencyTxtField" customModule="app_window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="150" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Drg-VE-ggP"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LqC-Js-L6r" customClass="CurrencyTxtField" customModule="app_window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="63" y="192" width="249" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LqC-Js-L6r" customClass="CurrencyTxtField" customModule="app_window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="215" width="335" height="40"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kh4-bM-eza">
+                                <rect key="frame" x="20" y="300" width="335" height="68.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F6-X2-zPA">
+                                <rect key="frame" x="134.5" y="373.5" width="106" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="DDs-Rs-guR"/>
+                                    <constraint firstAttribute="height" constant="28" id="EuO-VW-BHQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDH-py-hnb">
+                                <rect key="frame" x="20" y="593" width="335" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Clear Calculator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearCacluatorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tEF-FR-B9F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LqC-Js-L6r" firstAttribute="trailing" secondItem="JMF-ab-Skj" secondAttribute="trailing" id="1TD-lw-A7X"/>
+                            <constraint firstItem="0F6-X2-zPA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1fJ-Lf-fhK"/>
+                            <constraint firstItem="LqC-Js-L6r" firstAttribute="height" secondItem="JMF-ab-Skj" secondAttribute="height" id="3Fo-5x-e7J"/>
+                            <constraint firstItem="LqC-Js-L6r" firstAttribute="top" secondItem="JMF-ab-Skj" secondAttribute="bottom" constant="25" id="B5o-BX-cIX"/>
                             <constraint firstItem="Sow-hN-Xc6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EON-53-JG8"/>
+                            <constraint firstItem="kh4-bM-eza" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIe-zc-f6q"/>
+                            <constraint firstItem="JMF-ab-Skj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="J0H-rZ-5j2"/>
+                            <constraint firstItem="LqC-Js-L6r" firstAttribute="leading" secondItem="JMF-ab-Skj" secondAttribute="leading" id="KlI-fF-0pE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JMF-ab-Skj" secondAttribute="trailing" constant="20" id="ORW-lB-ZP2"/>
                             <constraint firstItem="Sow-hN-Xc6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xn2-2A-WtE"/>
                             <constraint firstItem="npz-1L-2jy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YSO-SR-MNc"/>
                             <constraint firstItem="Sow-hN-Xc6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zjn-Wp-104"/>
+                            <constraint firstItem="0F6-X2-zPA" firstAttribute="top" secondItem="kh4-bM-eza" secondAttribute="bottom" constant="5" id="dgx-CK-McJ"/>
                             <constraint firstItem="npz-1L-2jy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="eSa-Uy-fmF"/>
+                            <constraint firstItem="JMF-ab-Skj" firstAttribute="top" secondItem="npz-1L-2jy" secondAttribute="bottom" constant="35" id="fgO-oJ-GNr"/>
+                            <constraint firstItem="kh4-bM-eza" firstAttribute="top" secondItem="LqC-Js-L6r" secondAttribute="bottom" constant="45" id="gWu-bo-gSB"/>
                             <constraint firstItem="Sow-hN-Xc6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="i3Y-zg-gMc"/>
+                            <constraint firstItem="kh4-bM-eza" firstAttribute="width" secondItem="LqC-Js-L6r" secondAttribute="width" id="s05-lZ-jDY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="hoursLbl" destination="0F6-X2-zPA" id="Z9B-eC-Tef"/>
                         <outlet property="priceTxt" destination="LqC-Js-L6r" id="v4U-Nw-KEu"/>
+                        <outlet property="resultLbl" destination="kh4-bM-eza" id="FhJ-rv-pFi"/>
                         <outlet property="wageTxt" destination="JMF-ab-Skj" id="1RE-0I-RhT"/>
                     </connections>
                 </viewController>
